@@ -15,7 +15,12 @@ public class NoteBuilder implements Builder {
     //    this.note = new Note();
     //}
 
-    private Note note = new Note();
+    private Note note;
+
+    public Note buildNote() {
+        note = new Note();
+        return note;
+    }
 
     public Note getNote() {
         return note;
@@ -32,28 +37,45 @@ public class NoteBuilder implements Builder {
     }
 
     public void setType(String type) {
+        if (note == null) {
+            buildNote();
+        }
         note.setType(type);
     }
 
 
 
     public void setStartDate(Date start) {
-        note.setStartDate(start);
+        if (note == null) {
+            buildNote();
+        }note.setStartDate(start);
     }
 
     public void setEndDate(Date end) {
+        if (note == null) {
+            buildNote();
+        }
         note.setEndDate(end);
     }
 
     public void setTitle(String title) {
+        if (note == null) {
+            buildNote();
+        }
         note.setTitle(title);
     }
 
     public void setGuests(List<String> guests) {
+        if (note == null) {
+            buildNote();
+        }
         note.setGuests(guests);
     }
 
     public void addGuest(String guest) {
+        if (note == null) {
+            buildNote();
+        }
         List<String> guests = note.getGuests();
         if (guests == null) {
             guests = new ArrayList<String>();
@@ -63,10 +85,16 @@ public class NoteBuilder implements Builder {
     }
 
     public void setContent(String content) {
+        if (note == null) {
+            buildNote();
+        }
         note.setContent(content);
     }
 
     public void setAlarm(boolean alarm) {
-        note.setAlarm(alarm);
+        if (note == null) {
+            buildNote();
+        }note.setAlarm(alarm);
     }
+
 }

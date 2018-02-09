@@ -14,7 +14,7 @@ public class Calendar {
     //
     //
     //
-    //// 11
+    //// 22
     //private Builder builder = new NoteBuilder();
     //
     ///**
@@ -59,19 +59,26 @@ public class Calendar {
 
         for(Note note : notes) {
             note.print();
+            System.out.println();
         }
     }
 
     public Note buildBusinessNote() {
+        builder.buildNote(); // 11
         builder.setType("business");
         addNote(builder.getNote());
         return builder.getNote();
     }
 
     public Note buildPersonalNote() {
+        builder.buildNote(); // 11
         builder.setType("personal");
         addNote(builder.getNote());
         return builder.getNote();
+    }
+
+    public Builder getBuilder() {
+        return builder;
     }
 
 }
