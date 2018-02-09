@@ -19,24 +19,22 @@ public class App
 
         Calendar calendar = new Calendar();
 
-        //Note note1 = calendar.buildBusinessNote();
-        //
-        //note1.addGuest("Nathan");
-        //note1.setTitle("builder");
-        //note1.setContent("something very important");
-        //note1.setStartDate(new Date());
-        //
-        //
+        Note note1 = calendar.buildBusinessNote();
 
+        note1.addGuest("Nathan");
+        note1.setTitle("builder");
+        note1.setContent("something very important");
+        note1.setStartDate(new Date());
 
         //Note note1 = calendar.getBuilder().buildNote();
         //calendar.getBuilder().setAll("business", new Date(), new Date(),
         //                           "builder", Arrays.asList("Nathon"), "something very important", true);
 
-
-        Builder builder = calendar.getBuilder();
-        Note note1 = builder.buildNote();
-        builder.set
+        //
+        //Builder builder = calendar.getBuilder();
+        //Note note1 = builder.buildNote();
+        //builder.setType("business");
+        //builder.setGuests(Arrays.asList("Nathan"));
 
         System.out.println("note1: ");
         note1.print();

@@ -22,6 +22,7 @@ public class Calendar {
     // * @return
     // */
     //public static Calendar getInstance() {
+    //    // non thread-safe
     //    if (instance == null) {
     //        instance = new Calendar();
     //    }
