@@ -10,22 +10,36 @@ public class Calendar {
     private List<Note> notes;
 
 
-    //private static Calendar instance;
+    private static Calendar instance;
+
+
+
+    // 22
+
+    /**
+     *
+     * @return
+     */
+    public static Calendar getInstance() {
+        // non thread-safe, Lazy
+        if (instance == null) {
+            instance = new Calendar();
+        }
+        return instance;
+    }
+
     //
+    //private Calendar() {
     //
+    //}
     //
-    //// 22
-    //private Builder builder = new NoteBuilder();
+    //private static final Calendar instance = new Calendar();
     //
     ///**
-    // *
+    // *  get Calendar instance, static factory method, Hungry
     // * @return
     // */
     //public static Calendar getInstance() {
-    //    // non thread-safe
-    //    if (instance == null) {
-    //        instance = new Calendar();
-    //    }
     //    return instance;
     //}
 
@@ -65,14 +79,14 @@ public class Calendar {
     }
 
     public Note buildBusinessNote() {
-        builder.buildNote(); // 11
+        //builder.buildNote(); // 11
         builder.setType("business");
         addNote(builder.getNote());
         return builder.getNote();
     }
 
     public Note buildPersonalNote() {
-        builder.buildNote(); // 11
+        //builder.buildNote(); // 11
         builder.setType("personal");
         addNote(builder.getNote());
         return builder.getNote();

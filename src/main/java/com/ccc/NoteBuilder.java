@@ -17,9 +17,9 @@ public class NoteBuilder implements Builder {
 
     private Note note;
 
-    public Note buildNote() {
+    public Builder buildNote() {
         note = new Note();
-        return note;
+        return this;
     }
 
     public Note getNote() {
@@ -36,11 +36,14 @@ public class NoteBuilder implements Builder {
         setAlarm(alarm);
     }
 
-    public void setType(String type) {
+    public Builder setType(String type) {
         if (note == null) {
             buildNote();
         }
         note.setType(type);
+
+        return this;
+
     }
 
 
@@ -65,11 +68,12 @@ public class NoteBuilder implements Builder {
         note.setTitle(title);
     }
 
-    public void setGuests(List<String> guests) {
+    public Builder setGuests(List<String> guests) {
         if (note == null) {
             buildNote();
         }
         note.setGuests(guests);
+        return this;
     }
 
     public void addGuest(String guest) {
